@@ -66,7 +66,7 @@ def get_stock():
         {'分類': '上海綜合', '指數': '3,380.68'}
     ]
 
-    return render_template('./stock.html', stocks=stocks)
+    return render_template('./stock.html', date=get_date(), stocks=stocks)
 
 
 print(get_date())

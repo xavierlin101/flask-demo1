@@ -8,22 +8,39 @@
     <title>首頁</title>
     <style>
         #date {
+            margin-top: 12px;
             display: inline-block;
             padding: 6px;
             background-color: black;
-            color: white
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
         }
     </style>
 </head>
 
-<body>
+<body onload="getTime()">
     <!-- jinja2 -->
     <h1>Hello, {{name}}</h1>
-    <span>
-        <p id="date">
-            {{date}}
-        </p>
-    </span>
+    <p id="date">
+        {{date}}
+    </p>
+    <ul>
+        <li>
+            <a href="/stock" target="_blank">亞股資訊</a>
+        </li>
+    </ul>
+    <script>
+        const timeE1 = document.querySelector('#date')
+        function getTime() {
+            let date = new Date();
+            timeE1.innerText = `${date.getFullYear()}-${date.getMonth() + 1}\
+        -${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
+            setTimeout(getTime, 1000);
+        }
+    </script>
+
 </body>
 
 </html>
