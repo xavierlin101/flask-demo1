@@ -21,8 +21,6 @@ def get_date():
     return date.strftime('%Y-%m-%d %H:%M:%S')
 
 # <type:id>
-
-
 @app.route('/book/<int:id>')
 def get_book(id):
     try:
