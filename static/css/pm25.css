@@ -1,0 +1,29 @@
+body {
+    background-color: antiquewhite;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+th{
+    background-color: brown;
+    color: white;
+}
+
+td{
+    background-color: aqua;
+    color:navy;
+}
+
+td:first-child{
+    background-color: chartreuse;
+}

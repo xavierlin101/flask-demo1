@@ -71,12 +71,12 @@ def get_stock():
 
 @app.route('/pm25')
 def pm25():
+    date = get_date()
     columns, values = get_pm25()
-
-    print(columns, values)
+    return render_template('./pm25.html', **locals())
 
 
 # pm25()
 if __name__ == '__main__':
-    pm25()
+    # pm25()
     app.run(debug=True)
