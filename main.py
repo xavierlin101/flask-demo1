@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from pm25 import get_pm25
 app = Flask(__name__)
 
 # 首頁
@@ -21,6 +21,8 @@ def get_date():
     return date.strftime('%Y-%m-%d %H:%M:%S')
 
 # <type:id>
+
+
 @app.route('/book/<int:id>')
 def get_book(id):
     try:
@@ -67,5 +69,14 @@ def get_stock():
     return render_template('./stock.html', date=get_date(), stocks=stocks)
 
 
-print(get_date())
-app.run(debug=True)
+@app.route('/pm25')
+def pm25():
+    columns, values = get_pm25()
+
+    print(columns, values)
+
+
+# pm25()
+if __name__ == '__main__':
+    pm25()
+    app.run(debug=True)
